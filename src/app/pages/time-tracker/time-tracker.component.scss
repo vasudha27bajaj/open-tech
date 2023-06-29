@@ -6,6 +6,7 @@
     display: inline-block;
     width: 60%;
     text-align: left;
+    margin-bottom: 2rem;
 }
 .text-center {
     text-align: center;
@@ -13,6 +14,7 @@
 ul{
     list-style-type: none;
     padding: 0;
+    color: gray;
 }
 .mt-24px {
     margin-top: 24px;
@@ -33,5 +35,28 @@ ul{
     height: 42px;
     width: 42px;
     font-size: 30px;
+    cursor: pointer;
+}
+.task-input{
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
+    padding: 0.5rem;
+    width: calc(100% - 16px)
+}
+.task-input:focus-visible{
+    border: 1px solid #5056ED;
+    outline: none;
+}
+.mb-1{
+    margin-bottom: 0.5rem;
+}
+.save-btn{
+    background-color: #5056ED;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    height: 2.25rem;
+    width: 8rem;
+    margin-top: 1.5rem;
     cursor: pointer;
 }

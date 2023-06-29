@@ -2,11 +2,13 @@
     <div *ngFor="let obj of trackerList" class="tracker-div">
        <p>{{obj.heading}}</p>
        <p>History</p>
-       <ul>
+       <ul *ngIf="obj.history.length">
         <li *ngFor="let history of obj.history">
             {{history}}
         </li>
        </ul>
+       <!--No history found-->
+       <p *ngIf="!obj.history.length">{{noHistoryFoundText}}</p>
     </div>
     <button (click)="openAddTaskPopup()" class="add-btn">+</button>
 </div>
@@ -17,6 +19,9 @@
 <!--Add Task Popup-->
 <ng-template #addTask>
     <div>
-        hello
+       <p class="mb-1">Enter the Task Name</p>
+       <input [(ngModel)]="newTask" tabindex="-1" class="task-input" type="text">
+       <br>
+       <button [mat-dialog-close]="true" class="save-btn">Save</button>
     </div>
 </ng-template>
