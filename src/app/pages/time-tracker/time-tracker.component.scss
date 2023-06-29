@@ -1,0 +1,37 @@
+.tracker-div{
+    background-color: white;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    border-radius: 25px;
+    display: inline-block;
+    width: 60%;
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+.mt-24px {
+    margin-top: 24px;
+}
+.parent-cont {
+    position: relative;
+    min-height: calc(100vh - 140px);
+}
+.add-btn{
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    background-color: #5056ED;
+    color: white;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    height: 42px;
+    width: 42px;
+    font-size: 30px;
+    cursor: pointer;
+}

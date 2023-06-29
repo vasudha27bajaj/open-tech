@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TimeTrackerComponent } from './pages/time-tracker/time-tracker.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'',
+    component:TimeTrackerComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

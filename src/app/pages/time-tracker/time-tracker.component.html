@@ -1,0 +1,22 @@
+<div class="text-center parent-cont mt-24px">
+    <div *ngFor="let obj of trackerList" class="tracker-div">
+       <p>{{obj.heading}}</p>
+       <p>History</p>
+       <ul>
+        <li *ngFor="let history of obj.history">
+            {{history}}
+        </li>
+       </ul>
+    </div>
+    <button (click)="openAddTaskPopup()" class="add-btn">+</button>
+</div>
+
+
+
+
+<!--Add Task Popup-->
+<ng-template #addTask>
+    <div>
+        hello
+    </div>
+</ng-template>
