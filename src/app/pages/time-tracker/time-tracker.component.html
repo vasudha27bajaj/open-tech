@@ -1,14 +1,30 @@
+<div class="header p-1">
+    <img src="https://open-frontend-bucket.s3.amazonaws.com/interviews/001/logo.svg">
+    <p *ngIf="totalTimeSpend" class="d-inline-block float-end m-1 text-grey ">Total Time Spend <span>{{totalTimeSpend}} hr</span> </p>
+</div>
 <div class="text-center parent-cont mt-24px">
-    <div *ngFor="let obj of trackerList" class="tracker-div">
-       <p>{{obj.heading}}</p>
-       <p>History</p>
-       <ul *ngIf="obj.history.length">
-        <li *ngFor="let history of obj.history">
-            {{history}}
-        </li>
-       </ul>
-       <!--No history found-->
-       <p *ngIf="!obj.history.length">{{noHistoryFoundText}}</p>
+    <div *ngFor="let obj of trackerList;let i = index" class="tracker-div">
+        <div class="flex-div">
+            <div>
+                <p>{{obj.heading}}</p>
+                <p class="mb-1">History</p>
+                <ul *ngIf="obj.history.length">
+                    <li *ngFor="let history of obj.history">
+                       Started the timer at {{history.startDate}} {{history.startTime}}
+                       <span *ngIf="!history.stopTime">(Active)</span>
+                       <span *ngIf="history.stopTime">& Stopped at {{history.stopDate}} {{history.stopTime}}</span>
+                    </li>
+                </ul>
+                <!--No history found-->
+                <p class="m-0 text-grey" *ngIf="!obj.history.length">{{noHistoryFoundText}}</p>
+            </div>
+            <div>
+                <p class="d-inline-block timer-text">{{obj.timer}}</p>
+                <button *ngIf="!obj.showTimer" (click)="startTimer(i)" class="save-btn">Start</button>
+                <button *ngIf="obj.showTimer" (click)="stopTimer(i)" class="stop-btn">Stop</button>
+                <button (click)="deleteTask(i)" class="delete-btn">X</button>
+            </div>
+        </div>
     </div>
     <button (click)="openAddTaskPopup()" class="add-btn">+</button>
 </div>
@@ -19,9 +35,9 @@
 <!--Add Task Popup-->
 <ng-template #addTask>
     <div>
-       <p class="mb-1">Enter the Task Name</p>
-       <input [(ngModel)]="newTask" tabindex="-1" class="task-input" type="text">
-       <br>
-       <button [mat-dialog-close]="true" class="save-btn">Save</button>
+        <p class="mb-1">Enter the Task Name</p>
+        <input [(ngModel)]="newTask" tabindex="-1" class="task-input" type="text">
+        <br>
+        <button [mat-dialog-close]="true" class="save-btn">Save</button>
     </div>
 </ng-template>

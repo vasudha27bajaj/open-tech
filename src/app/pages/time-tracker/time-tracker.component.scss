@@ -1,7 +1,7 @@
 .tracker-div{
     background-color: white;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
-    padding: 12px;
+    padding: 12px 24px 24px;
     border-radius: 25px;
     display: inline-block;
     width: 60%;
@@ -60,3 +60,40 @@ ul{
     margin-top: 1.5rem;
     cursor: pointer;
 }
+.stop-btn{
+    background-color: #ED5050;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    height: 2.25rem;
+    width: 8rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+.flex-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-btn {
+    background-color: #D9D9D9;
+    border-radius: 50px;
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.timer-text {
+    color: #5056ED;
+    border-left: 1.5px solid lightgrey;
+    padding-left: 1rem;
+    margin-right: 3rem;
+}
+
+.m-0{
+    margin: 0;
+}
+
+
