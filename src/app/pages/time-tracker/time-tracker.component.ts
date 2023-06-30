@@ -42,7 +42,7 @@ export class TimeTrackerComponent implements OnInit {
     this.trackerList.forEach((res)=>{
       totaltime = totaltime + res.totalTime;
     })
-    return totaltime;
+    return Math.floor(totaltime);
   }
 
   startTimer(index:number):void{
@@ -81,7 +81,7 @@ export class TimeTrackerComponent implements OnInit {
     const stoptime = this.parseDateString(this.trackerList[index].history[historyindex-1].stopDate,this.trackerList[index].history[historyindex-1].stopTime);
     const startTime = this.parseDateString(this.trackerList[index]?.history[historyindex-1].startDate,this.trackerList[index]?.history[historyindex-1].startTime);
     let diff:any = (stoptime.getTime() - startTime.getTime())/(1000);
-    diff = Math.floor(diff/3600);
+    diff = diff/3600;
     this.trackerList[index].totalTime = this.trackerList[index].totalTime + diff;
   }
 
